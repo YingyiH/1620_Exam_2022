@@ -53,6 +53,7 @@ const contactsList = [
 
 // Your code goes here
 const contactContent = document.querySelector('#display_all_contacts')
+const singleContactPage = document.querySelector('#display_single_contact')
 
 function createCard(){
   for (const contactInfo of contactsList){
@@ -74,10 +75,47 @@ function createCard(){
         `
     }
     contactContent.insertAdjacentHTML("afterbegin", contactCard)
-  } 
+    createSingleCard()
+    
+    function createSingleCard(){
+      contactContent.style.display = 'none'
+
+      btnContact = document.querySelector(contactCard)
+      btnContact.addEventListener("click",createPage)
+
+      const contactCard = `
+        <section id = ${contactInfo.ID}>
+          <img src ="img/${contactInfo.name}.png" alt= 'Selfile'>
+          <div id = ${contactInfo.name}>
+            <p>${contactInfo.name}</p>
+            <p>${contactInfo.phone}</p>
+            <p>${contactInfo.email}</p>
+          </div>
+          <button id= 'close_contact'>close</button>
+        </section>
+        `
+      function createPage(){
+        singleContactPage.insertAdjacentHTML("afterbegin", contactCard)
+
+        btnClose = document.querySelector(button)
+        btnClose.addEventListener("click",evt => {
+          contactRemove(evt)
+        })
+      }
+    }
   
+
+    function contactRemove(evt){
+      removeFirstChild(evt)
+    }
+  } 
 }
 createCard()
+
+
+
+
+
 
 
 
