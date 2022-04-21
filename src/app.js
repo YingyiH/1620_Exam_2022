@@ -52,3 +52,27 @@ const contactsList = [
 ]
 
 // Your code goes here
+const contact_content = document.querySelector('#display_all_contacts')
+for (const contact_info of contactsList){
+
+  if (contact_info.name.includes('major')){
+
+    var contact_card = `
+    <div id = ${contact_info.ID}>
+      <img src ="img/Motoko.png" alt= 'Selfile'>
+      <p>${contact_info.name}</p>
+    </div>
+    `
+  } else {
+      var contact_card = `
+      <div id = ${contact_info.ID}>
+        <img src ="img/${contact_info.name}.png" alt= 'Selfile'>
+        <p>${contact_info.name}</p>
+      </div>
+      `
+  }
+  
+  contact_content.insertAdjacentHTML("afterbegin", contact_card)
+} 
+
+console.log(contact_content)

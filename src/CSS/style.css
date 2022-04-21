@@ -101,6 +101,7 @@ main {
 
 #display_all_contacts {
   display: flex;
+  flex-wrap: wrap;
   flex-grow: 0;
   gap: 20px;
   padding: 20px;
@@ -124,6 +125,7 @@ main {
 #display_all_contacts p {
   font-size: 2rem;
   font-weight: 500;
+  overflow: auto;
   color: var(--black);
 }
 
