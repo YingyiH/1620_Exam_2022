@@ -52,32 +52,32 @@ const contactsList = [
 ]
 
 // Your code goes here
-const contact_content = document.querySelector('#display_all_contacts')
+const contactContent = document.querySelector('#display_all_contacts')
 
 function createCard(){
-  for (const contact_info of contactsList){
+  for (const contactInfo of contactsList){
 
-    if (contact_info.name.includes('major')){
+    if (contactInfo.name.includes('major')){
   
-      var contact_card = `
-      <div id = ${contact_info.ID}>
+      var contactCard = `
+      <div id = ${contactInfo.ID}>
         <img src ="img/Motoko.png" alt= 'Selfile'>
-        <p>${contact_info.name}</p>
+        <p>${contactInfo.name}</p>
       </div>
       `
     } else {
-        var contact_card = `
-        <div id = ${contact_info.ID}>
-          <img src ="img/${contact_info.name}.png" alt= 'Selfile'>
-          <p>${contact_info.name}</p>
+        var contactCard = `
+        <div id = ${contactInfo.ID}>
+          <img src ="img/${contactInfo.name}.png" alt= 'Selfile'>
+          <p>${contactInfo.name}</p>
         </div>
         `
     }
-    
-    contact_content.insertAdjacentHTML("afterbegin", contact_card)
+    contactContent.insertAdjacentHTML("afterbegin", contactCard)
   } 
   
 }
 createCard()
+
 
 
